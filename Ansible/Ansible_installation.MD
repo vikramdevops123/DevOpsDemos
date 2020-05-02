@@ -40,7 +40,7 @@ Using keybased authentication is advised. If you are still at learning stage use
  sed -ie 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 ```
 
-swith to ansadmin
+switch to ansadmin
 ```sh
 sudo su ansadmin
 ```

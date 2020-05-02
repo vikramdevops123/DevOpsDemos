@@ -38,14 +38,24 @@ Using keybased authentication is advised. If you are still at learning stage use
 ```sh 
 # sed command replaces "PasswordAuthentication no to yes" without editing file 
  sed -ie 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-``` 
+```
+
+swith to ansadmin
+```sh
+sudo su ansadmin
+```
 Login as a ansadmin user on master and generate ssh key (Master)
 ```sh 
 ssh-keygen
 ```
+add localhost details in hostfile
+```sh
+cat "localhost" >>/etc/ansible/hosts
+```
 Copy keys onto all ansible client nodes (Master)
 ```sh 
 ssh-copy-id <target-server>
+or ssh-copy-id localhost
 ```
 
 Update target servers information on /etc/ansible/hosts file (Master)
